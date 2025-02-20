@@ -43,3 +43,18 @@ restaurant_tables2 = [
     [5,        'o',      'x',      'o',      'x',      'o',      'o'],
     [6,        'o',      'o',      'o',      'o',      'x',      'o']
 ]
+
+
+def available_tables(restaurant_tables, timeslot):
+    timeslot_row = restaurant_tables[timeslot]
+    free_tables = []
+    for i in range(1, len(timeslot_row)):
+        if timeslot_row[i] == 'o':
+            table_id = restaurant_tables[0][i]
+            free_tables.append(table_id)
+    
+    return free_tables
+
+
+free_tables = available_tables(restaurant_tables2, 1)
+print(free_tables) 
